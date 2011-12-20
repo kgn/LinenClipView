@@ -9,7 +9,9 @@ that displays a linen pattern in the clip views like many of Apple's Lion apps.
 }
 ```
 
-By default LNClipView uses an image in the main bundle named *Linen*. To use a different image call `[LNClipView setBackgroundImage:]`. The background image is stored statically to improve drawing performance so it can only be set once and must be set before setting up any clip views.
+By default `LNClipView` uses an image in the main bundle named *"Linen"*. To use a different image 
+call `[LNClipView setBackgroundImage:]`. The background image is stored statically to improve drawing
+performance so it can only be set once and must be set before setting up any clip views.
 
     [LNClipView setBackgroundImage:[NSImage imageNamed:@"linen_background"]];
 
