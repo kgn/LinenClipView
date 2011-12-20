@@ -1,0 +1,270 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		73662FE914535AAF0034010E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73662FE814535AAF0034010E /* Cocoa.framework */; };
+		7366300614535AF00034010E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7366300514535AF00034010E /* WebKit.framework */; };
+		738C67BA14A05D5900330269 /* LNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 738C67B614A05D5900330269 /* LNAppDelegate.m */; };
+		738C67BB14A05D5900330269 /* LNClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 738C67B814A05D5900330269 /* LNClipView.m */; };
+		738C67BC14A05D5900330269 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 738C67B914A05D5900330269 /* main.m */; };
+		738C67BF14A05D8800330269 /* Linen.png in Resources */ = {isa = PBXBuildFile; fileRef = 738C67BE14A05D8800330269 /* Linen.png */; };
+		738C67C214A05D9500330269 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 738C67C014A05D9500330269 /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		73662FE414535AAF0034010E /* LinenClipView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LinenClipView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		73662FE814535AAF0034010E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		73662FEB14535AAF0034010E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		73662FED14535AAF0034010E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7366300514535AF00034010E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		738C67B514A05D5900330269 /* LNAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNAppDelegate.h; sourceTree = SOURCE_ROOT; };
+		738C67B614A05D5900330269 /* LNAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNAppDelegate.m; sourceTree = SOURCE_ROOT; };
+		738C67B714A05D5900330269 /* LNClipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNClipView.h; sourceTree = SOURCE_ROOT; };
+		738C67B814A05D5900330269 /* LNClipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNClipView.m; sourceTree = SOURCE_ROOT; };
+		738C67B914A05D5900330269 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
+		738C67BE14A05D8800330269 /* Linen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Linen.png; sourceTree = SOURCE_ROOT; };
+		738C67C114A05D9500330269 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		73662FE114535AAF0034010E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7366300614535AF00034010E /* WebKit.framework in Frameworks */,
+				73662FE914535AAF0034010E /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		73662FD914535AAF0034010E = {
+			isa = PBXGroup;
+			children = (
+				73662FEE14535AAF0034010E /* LinenClipView */,
+				73662FE714535AAF0034010E /* Frameworks */,
+				73662FE514535AAF0034010E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		73662FE514535AAF0034010E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				73662FE414535AAF0034010E /* LinenClipView.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		73662FE714535AAF0034010E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				73662FED14535AAF0034010E /* Foundation.framework */,
+				73662FEB14535AAF0034010E /* AppKit.framework */,
+				7366300514535AF00034010E /* WebKit.framework */,
+				73662FE814535AAF0034010E /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		73662FEE14535AAF0034010E /* LinenClipView */ = {
+			isa = PBXGroup;
+			children = (
+				738C67B914A05D5900330269 /* main.m */,
+				738C67B714A05D5900330269 /* LNClipView.h */,
+				738C67B814A05D5900330269 /* LNClipView.m */,
+				738C67B514A05D5900330269 /* LNAppDelegate.h */,
+				738C67B614A05D5900330269 /* LNAppDelegate.m */,
+				738C67BD14A05D7000330269 /* Resources */,
+			);
+			name = LinenClipView;
+			path = LinenWebView;
+			sourceTree = "<group>";
+		};
+		738C67BD14A05D7000330269 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				738C67BE14A05D8800330269 /* Linen.png */,
+				738C67C014A05D9500330269 /* MainMenu.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		73662FE314535AAF0034010E /* LinenClipView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7366300214535AB00034010E /* Build configuration list for PBXNativeTarget "LinenClipView" */;
+			buildPhases = (
+				73662FE014535AAF0034010E /* Sources */,
+				73662FE114535AAF0034010E /* Frameworks */,
+				73662FE214535AAF0034010E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LinenClipView;
+			productName = LinenWebView;
+			productReference = 73662FE414535AAF0034010E /* LinenClipView.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		73662FDB14535AAF0034010E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "David Keegan";
+			};
+			buildConfigurationList = 73662FDE14535AAF0034010E /* Build configuration list for PBXProject "LinenClipView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 73662FD914535AAF0034010E;
+			productRefGroup = 73662FE514535AAF0034010E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				73662FE314535AAF0034010E /* LinenClipView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		73662FE214535AAF0034010E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				738C67BF14A05D8800330269 /* Linen.png in Resources */,
+				738C67C214A05D9500330269 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		73662FE014535AAF0034010E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				738C67BA14A05D5900330269 /* LNAppDelegate.m in Sources */,
+				738C67BB14A05D5900330269 /* LNClipView.m in Sources */,
+				738C67BC14A05D5900330269 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		738C67C014A05D9500330269 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				738C67C114A05D9500330269 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7366300014535AB00034010E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		7366300114535AB00034010E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		7366300314535AB00034010E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Info.plist;
+				PRODUCT_NAME = LinenClipView;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7366300414535AB00034010E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Info.plist;
+				PRODUCT_NAME = LinenClipView;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		73662FDE14535AAF0034010E /* Build configuration list for PBXProject "LinenClipView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7366300014535AB00034010E /* Debug */,
+				7366300114535AB00034010E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7366300214535AB00034010E /* Build configuration list for PBXNativeTarget "LinenClipView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7366300314535AB00034010E /* Debug */,
+				7366300414535AB00034010E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 73662FDB14535AAF0034010E /* Project object */;
+}
