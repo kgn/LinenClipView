@@ -11,6 +11,7 @@
 
 @interface LNClipView : NSClipView
 
++ (void)setBackgroundImage:(NSImage *)image;
 + (void)setupWithScrollView:(NSScrollView *)scrollView;
 
 @end

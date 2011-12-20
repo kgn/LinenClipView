@@ -8,11 +8,20 @@
 
 #import "LNClipView.h"
 
+static NSImage *LNBackGroundImage = nil;
+
 @implementation LNClipView
+
++ (void)setBackgroundImage:(NSImage *)image{
+    if(LNBackGroundImage == nil){
+        LNBackGroundImage = image;
+    }
+}
 
 + (void)setupWithScrollView:(NSScrollView *)scrollView{
     id docView = [scrollView documentView];
-    LNClipView *clipView = [[LNClipView alloc] initWithFrame:[[scrollView contentView] frame]];
+    LNClipView *clipView = [[LNClipView alloc] initWithFrame:
+                            [[scrollView contentView] frame]];
     [scrollView setContentView:clipView];
     [scrollView setDocumentView:docView];
 }
@@ -27,8 +36,11 @@
     // pattern
     static NSColor *backgroundColor = nil;   
     if(backgroundColor == nil){
-        backgroundColor = [NSColor colorWithPatternImage:
-                           [NSImage imageNamed:@"Linen"]];
+        NSImage *image = LNBackGroundImage;
+        if(image == nil){
+            image = [NSImage imageNamed:@"Linen"];
+        }
+        backgroundColor = [NSColor colorWithPatternImage:image];
     }
     [backgroundColor set];
     NSRectFill(self.bounds);
@@ -67,7 +79,8 @@
 + (void)setupWithWebView:(WebView *)webView{
     id docView = [[[webView mainFrame] frameView] documentView];
     NSScrollView *scrollView = (NSScrollView *)[[docView superview] superview];
-    LNWebClipView *clipView = [[LNWebClipView alloc] initWithFrame:[[scrollView contentView] frame]];
+    LNWebClipView *clipView = [[LNWebClipView alloc] initWithFrame:
+                               [[scrollView contentView] frame]];
     [scrollView setContentView:clipView];
     [scrollView setDocumentView:docView];
 }

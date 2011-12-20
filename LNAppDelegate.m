@@ -18,12 +18,23 @@
 @synthesize tableScrollView = _tableScrollView;
 
 - (void)awakeFromNib{
+    // By default LNClipView uses an image in the main bundle named Linen.
+    // To use a different image call [LNClipView setBackgroundImage:].
+    // The background image is stored statically to improve drawing performance so 
+    // it can only be set once and must be set before setting up any clip views.
+    // [LNClipView setBackgroundImage:[NSImage imageNamed:@"linen_background"]];
+    
+    // Setup a NSScrollView
     [LNClipView setupWithScrollView:self.tableScrollView];
     
+    
+    // Setup a WebView
     [LNWebClipView setupWithWebView:self.webView];
     
     [[self.webView preferences] setDefaultFontSize:16];
 }
+
+#pragma table delegte and data store
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification{
     _links = [NSArray arrayWithObjects:@"http://drbl.in/cBRY", @"http://playbyplayapp.com", @"http://raven.io", nil];
