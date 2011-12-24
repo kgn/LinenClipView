@@ -17,7 +17,7 @@ performance so it can only be set once and must be set before setting up any cli
 
 This repository contains a sample app demonstrating how to use `LNClipView` with a `NSTableView` and `WebView`.
 
-![](https://github.com/InScopeApps/LinenClipView/raw/master/Screenshot.png)
+![](https://github.com/kgn/LinenClipView/raw/master/Screenshot.png)
 
 Special thanks to [@Dimillian](https://twitter.com/#!/dimillian) for figuring out how to keep the 
 pattern stationary(`[NSGraphicsContext setPatternPhase:]`).
