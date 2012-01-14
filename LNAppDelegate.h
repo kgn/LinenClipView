@@ -13,8 +13,8 @@
 <NSApplicationDelegate, NSTableViewDelegate, NSTableViewDataSource>
 
 @property (strong) IBOutlet NSWindow *window;
-@property (strong) IBOutlet WebView *webView;
+@property (strong) IBOutlet LNWebView *webView;
 @property (strong) IBOutlet NSTableView *tableView;
-@property (strong) IBOutlet NSScrollView *tableScrollView;
+@property (strong) IBOutlet LNScrollView *tableScrollView;
 
 @end

@@ -18,19 +18,11 @@
 @synthesize tableScrollView = _tableScrollView;
 
 - (void)awakeFromNib{
-    // By default LNClipView uses an image in the main bundle named Linen.
-    // To use a different image call [LNClipView setBackgroundImage:].
-    // The background image is stored statically to improve drawing performance so 
-    // it can only be set once and must be set before setting up any clip views.
-    // [LNClipView setBackgroundImage:[NSImage imageNamed:@"linen_background"]];
+    [self.webView setPattern:[NSImage imageNamed:@"pattern3"]];    
+    [self.tableScrollView setPattern:[NSImage imageNamed:@"pattern11"]];
     
-    // Setup a NSScrollView
-    [LNClipView setupWithScrollView:self.tableScrollView];
-    
-    
-    // Setup a WebView
-    [LNWebClipView setupWithWebView:self.webView];
-    
+    // fix the font size of the webview, this is not 
+    // related to LNClipView it's just a bug in WebView
     [[self.webView preferences] setDefaultFontSize:16];
 }
 
@@ -43,15 +35,15 @@
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView{
-    return [_links count];
+    return [_links count]*20;
 }
 
 - (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)rowIndex{
-    return [_links objectAtIndex:rowIndex];
+    return [_links objectAtIndex:rowIndex%[_links count]];
 }
 
 - (void)tableViewSelectionDidChange:(NSNotification *)notification{
-    [self.webView setMainFrameURL:[_links objectAtIndex:[self.tableView selectedRow]]];
+    [self.webView setMainFrameURL:[_links objectAtIndex:[self.tableView selectedRow]%[_links count]]];
 }
 
 @end

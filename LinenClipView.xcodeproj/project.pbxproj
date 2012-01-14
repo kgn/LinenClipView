@@ -12,8 +12,9 @@
 		738C67BA14A05D5900330269 /* LNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 738C67B614A05D5900330269 /* LNAppDelegate.m */; };
 		738C67BB14A05D5900330269 /* LNClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 738C67B814A05D5900330269 /* LNClipView.m */; };
 		738C67BC14A05D5900330269 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 738C67B914A05D5900330269 /* main.m */; };
-		738C67BF14A05D8800330269 /* Linen.png in Resources */ = {isa = PBXBuildFile; fileRef = 738C67BE14A05D8800330269 /* Linen.png */; };
 		738C67C214A05D9500330269 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 738C67C014A05D9500330269 /* MainMenu.xib */; };
+		73DF5C8514C1355B0055C178 /* pattern3.png in Resources */ = {isa = PBXBuildFile; fileRef = 73DF5C8314C1355B0055C178 /* pattern3.png */; };
+		73DF5C8614C1355B0055C178 /* pattern11.png in Resources */ = {isa = PBXBuildFile; fileRef = 73DF5C8414C1355B0055C178 /* pattern11.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,8 +28,9 @@
 		738C67B714A05D5900330269 /* LNClipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNClipView.h; sourceTree = SOURCE_ROOT; };
 		738C67B814A05D5900330269 /* LNClipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNClipView.m; sourceTree = SOURCE_ROOT; };
 		738C67B914A05D5900330269 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
-		738C67BE14A05D8800330269 /* Linen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Linen.png; sourceTree = SOURCE_ROOT; };
 		738C67C114A05D9500330269 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = SOURCE_ROOT; };
+		73DF5C8314C1355B0055C178 /* pattern3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pattern3.png; sourceTree = SOURCE_ROOT; };
+		73DF5C8414C1355B0055C178 /* pattern11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pattern11.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +91,8 @@
 		738C67BD14A05D7000330269 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				738C67BE14A05D8800330269 /* Linen.png */,
+				73DF5C8314C1355B0055C178 /* pattern3.png */,
+				73DF5C8414C1355B0055C178 /* pattern11.png */,
 				738C67C014A05D9500330269 /* MainMenu.xib */,
 			);
 			name = Resources;
@@ -146,8 +149,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				738C67BF14A05D8800330269 /* Linen.png in Resources */,
 				738C67C214A05D9500330269 /* MainMenu.xib in Resources */,
+				73DF5C8514C1355B0055C178 /* pattern3.png in Resources */,
+				73DF5C8614C1355B0055C178 /* pattern11.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +233,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = LinenClipView;
 				WRAPPER_EXTENSION = app;
 			};
@@ -238,6 +243,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = LinenClipView;
 				WRAPPER_EXTENSION = app;
 			};

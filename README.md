@@ -1,28 +1,26 @@
-**LinenClipView** provides subclasses of `NSClipView` for `NSScrollView` and `WebView` 
-that displays a linen pattern in the clip views like many of Apple's Lion apps.
+**LinenClipView** provides a subclass of `NSScrollView` and `NSWebView` 
+that displays a linen pattern in the clip view like many of Apple's Lion apps. This library can of course be used to display any background image.
+
+---
+
+In **Interfacce Builder** change the *Class* of an `NSScrollView` to `LNScrollView` or similarly change the *Class* of a WebView to `LNWebView`.
+
+These classes can also be created via code with `initWithFrame`.
+
+To set the pattern image simply call `setPattern` on either subclass:
 
 ``` obj-c
-- (void)awakeFromNib{
-    [LNClipView setupWithScrollView:self.tableScrollView];
-    
-    [LNWebClipView setupWithWebView:self.webView];
-}
+[self.tableScrollView setPattern:[NSImage imageNamed:@"pattern11"]];
+[self.webView setPattern:[NSImage imageNamed:@"pattern3"]];
 ```
 
-By default `LNClipView` uses an image in the main bundle named *"Linen"*. To use a different image 
-call `[LNClipView setBackgroundImage:]`. The background image is stored statically to improve drawing
-performance so it can only be set once and must be set before setting up any clip views.
-
-    [LNClipView setBackgroundImage:[NSImage imageNamed:@"linen_background"]];
-
-This repository contains a sample app demonstrating how to use `LNClipView` with a `NSTableView` and `WebView`.
+The sample project that ships with this project demonstrates this.
 
 ![](https://github.com/kgn/LinenClipView/raw/master/Screenshot.png)
 
+---
+
 Special thanks to [@Dimillian](https://twitter.com/#!/dimillian) for figuring out how to keep the 
-pattern stationary(`[NSGraphicsContext setPatternPhase:]`).
+pattern stationary(`[NSGraphicsContext setPatternPhase:]`) and [@caffeinatedapp](https://twitter.com/#!/caffeinatedapp) for figuring out a fix to the scrollbars on Lion(the complicated `hitTest` code).
 
-## Apps using LinenClipView
-
-* [Play by Play](http://playbyplayapp.com)
-* [Raven](http://raven.io)
+The background patterns included with this project are from [@minimalpatterns](http://www.minimal-patterns.com).

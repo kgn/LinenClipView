@@ -8,23 +8,15 @@
 
 #import "LNClipView.h"
 
-static NSImage *LNBackGroundImage = nil;
+#define LN_RUNNING_LION (floor(NSAppKitVersionNumber) > NSAppKitVersionNumber10_6)
+
+@interface LNClipView : NSClipView
+@property (nonatomic, strong) NSColor *pattern;
+@end
 
 @implementation LNClipView
 
-+ (void)setBackgroundImage:(NSImage *)image{
-    if(LNBackGroundImage == nil){
-        LNBackGroundImage = image;
-    }
-}
-
-+ (void)setupWithScrollView:(NSScrollView *)scrollView{
-    id docView = [scrollView documentView];
-    LNClipView *clipView = [[LNClipView alloc] initWithFrame:
-                            [[scrollView contentView] frame]];
-    [scrollView setContentView:clipView];
-    [scrollView setDocumentView:docView];
-}
+@synthesize pattern = _pattern;
 
 - (void)drawRect:(NSRect)dirtyRect{
     [super drawRect:dirtyRect];
@@ -34,15 +26,7 @@ static NSImage *LNBackGroundImage = nil;
      NSMakePoint(0.0f, NSHeight(self.bounds))];
     
     // pattern
-    static NSColor *backgroundColor = nil;   
-    if(backgroundColor == nil){
-        NSImage *image = LNBackGroundImage;
-        if(image == nil){
-            image = [NSImage imageNamed:@"Linen"];
-        }
-        backgroundColor = [NSColor colorWithPatternImage:image];
-    }
-    [backgroundColor set];
+    [self.pattern set];
     NSRectFill(self.bounds);
     
     // shadow
@@ -70,19 +54,86 @@ static NSImage *LNBackGroundImage = nil;
 
 @end
 
+@implementation LNScrollView{
+    LNClipView *_clipView;
+}
+
+- (void)setup{
+    if(LN_RUNNING_LION){
+        id docView = [self documentView];
+        _clipView = [[LNClipView alloc] initWithFrame:
+                     [[self contentView] frame]];
+        [self setContentView:_clipView];
+        [self setDocumentView:docView];
+    }
+}
+
+- (id)initWithFrame:(NSRect)frameRect{
+    if((self = [super initWithFrame:frameRect])){
+        [self setup];
+    }
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder *)coder{
+    if((self = [super initWithCoder:coder])){
+        [self setup];
+    }
+    return self;
+}
+
+// this is the cure to fix the scrollers
+// From https://gist.github.com/1608395
+- (NSView *)hitTest:(NSPoint)aPoint{
+    if(!LN_RUNNING_LION){
+        return [super hitTest:aPoint];
+    }
+    
+    NSEvent * currentEvent = [NSApp currentEvent];
+    if([currentEvent type] == NSLeftMouseDown){
+        // if we have a vertical scroller and it accepts the current hit
+        if([self hasVerticalScroller] && [[self verticalScroller] hitTest:aPoint] != nil){
+            [[self verticalScroller] mouseDown:currentEvent];
+            return nil;
+        }
+        // if we have a horizontal scroller and it accepts the current hit
+        if([self hasVerticalScroller] && [[self horizontalScroller] hitTest:aPoint] != nil){
+            [[self horizontalScroller] mouseDown:currentEvent];
+            return nil;
+        }
+    }else if([currentEvent type] == NSLeftMouseUp){
+        // if mouse up, just tell both our scrollers we have moused up
+        if([self hasVerticalScroller]){
+            [[self verticalScroller] mouseUp:currentEvent];
+        }
+        if([self hasHorizontalScroller]){
+            [[self horizontalScroller] mouseUp:currentEvent];
+        }
+        return self;
+    }
+    
+    return [super hitTest:aPoint];
+}
+
+- (void)setPattern:(NSImage *)pattern{
+    _clipView.pattern = [NSColor colorWithPatternImage:pattern];
+    [_clipView setNeedsDisplay:YES];    
+}
+
+@end
+
+//  From http://www.koders.com/objectivec/fid22DEE7EA2343C20D0FEEC2C079245069DF3E32A5.aspx
+@interface LNWebClipView : LNClipView
+- (void)setAdditionalClip:(NSRect)additionalClip;
+- (void)resetAdditionalClip;
+- (BOOL)hasAdditionalClip;
+- (NSRect)additionalClip;
+@end
+
 //  From http://www.koders.com/objectivec/fidD68502CAF940A73CC1E990AF8A2E3D17ACFCD647.aspx
 @implementation LNWebClipView{
     BOOL _haveAdditionalClip;
     NSRect _additionalClip;
-}
-
-+ (void)setupWithWebView:(WebView *)webView{
-    id docView = [[[webView mainFrame] frameView] documentView];
-    NSScrollView *scrollView = (NSScrollView *)[[docView superview] superview];
-    LNWebClipView *clipView = [[LNWebClipView alloc] initWithFrame:
-                               [[scrollView contentView] frame]];
-    [scrollView setContentView:clipView];
-    [scrollView setDocumentView:docView];
 }
 
 - (id)initWithFrame:(NSRect)frame{
@@ -140,5 +191,62 @@ static NSImage *LNBackGroundImage = nil;
 //    }
 //    [super scrollWheel:event];
 //}
+
+// From https://gist.github.com/b6bcb09a9fc0e9557c27
+- (NSView *)hitTest:(NSPoint)aPoint{
+    if(!LN_RUNNING_LION){
+        return [super hitTest:aPoint];
+    }
+    
+    NSEvent *currentEvent = [NSApp currentEvent];
+    NSScrollView *scrollView = (NSScrollView *)[self superview];
+    if([currentEvent type] == NSLeftMouseDown){
+        // if we have a vertical scroller and it accepts the current hit
+        if([scrollView hasVerticalScroller] && [[scrollView verticalScroller] hitTest:aPoint] != nil){
+            [[scrollView verticalScroller] mouseDown:currentEvent];
+        }
+        // if we have a horizontal scroller and it accepts the current hit
+        if([scrollView hasVerticalScroller] && [[scrollView horizontalScroller] hitTest:aPoint] != nil){
+            [[scrollView horizontalScroller] mouseDown:currentEvent];
+        }
+    }
+    
+    return [super hitTest:aPoint];
+}
+
+@end
+
+@implementation LNWebView{
+    LNWebClipView *_clipView;
+}
+
+- (void)setup{
+    if(LN_RUNNING_LION){    
+        id docView = [[[self mainFrame] frameView] documentView];
+        NSScrollView *scrollView = (NSScrollView *)[[docView superview] superview];
+        _clipView = [[LNWebClipView alloc] initWithFrame:[[scrollView contentView] frame]];
+        [scrollView setContentView:_clipView];
+        [scrollView setDocumentView:docView];
+    }
+}
+
+- (id)initWithFrame:(NSRect)frameRect{
+    if((self = [super initWithFrame:frameRect])){
+        [self setup];
+    }
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder *)coder{
+    if((self = [super initWithCoder:coder])){
+        [self setup];
+    }
+    return self;
+}
+
+- (void)setPattern:(NSImage *)pattern{
+    _clipView.pattern = [NSColor colorWithPatternImage:pattern];
+    [_clipView setNeedsDisplay:YES];
+}
 
 @end

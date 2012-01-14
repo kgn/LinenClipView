@@ -37,7 +37,7 @@
 	<key>DTXcodeBuild</key>
 	<string>4D502</string>
 	<key>LSMinimumSystemVersion</key>
-	<string>10.7</string>
+	<string>10.6</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2011 David Keegan. All rights reserved.</string>
 	<key>NSMainNibFile</key>
