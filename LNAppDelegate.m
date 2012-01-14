@@ -26,8 +26,6 @@
     [[self.webView preferences] setDefaultFontSize:16];
 }
 
-#pragma table delegte and data store
-
 - (void)applicationDidFinishLaunching:(NSNotification *)notification{
     _links = [NSArray arrayWithObjects:@"http://drbl.in/cBRY", @"http://playbyplayapp.com", @"http://raven.io",
               @"http://twitter.com/_kgn", @"http://twitter.com/Dimillian", @"http://twitter.com/caffeinatedapp",
