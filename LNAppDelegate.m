@@ -29,13 +29,16 @@
 #pragma table delegte and data store
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification{
-    _links = [NSArray arrayWithObjects:@"http://drbl.in/cBRY", @"http://playbyplayapp.com", @"http://raven.io", nil];
+    _links = [NSArray arrayWithObjects:@"http://drbl.in/cBRY", @"http://playbyplayapp.com", @"http://raven.io",
+              @"http://twitter.com/_kgn", @"http://twitter.com/Dimillian", @"http://twitter.com/caffeinatedapp",
+              @"http://github.com/kgn/LinenClipView", @"http://www.minimal-patterns.com",
+              nil];
     [self.tableView reloadData];
     [self.tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:0] byExtendingSelection:NO];
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView{
-    return [_links count]*20;
+    return [_links count]*10;
 }
 
 - (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)rowIndex{
