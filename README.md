@@ -3,7 +3,7 @@ that displays a linen pattern in the clip view like many of Apple's Lion apps. T
 
 ---
 
-In **Interfacce Builder** change the *Class* of an `NSScrollView` to `LNScrollView` or similarly change the *Class* of a `WebView` to `LNWebView`.
+In **Interface Builder** change the *Class* of an `NSScrollView` to `LNScrollView` or similarly change the *Class* of a `WebView` to `LNWebView`.
 
 These classes can also be created via code with `initWithFrame`.
 
