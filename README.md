@@ -24,3 +24,5 @@ Special thanks to [@Dimillian](https://twitter.com/#!/dimillian) for figuring ou
 pattern stationary(`[NSGraphicsContext setPatternPhase:]`) and [@caffeinatedapp](https://twitter.com/#!/caffeinatedapp) for figuring out a fix to the scrollbars on Lion(the complicated `hitTest` code).
 
 The background patterns included with this project are from [@minimalpatterns](http://www.minimal-patterns.com).
+
+**LinenClipView** is available under the MIT license. See the LICENSE file for more info.
