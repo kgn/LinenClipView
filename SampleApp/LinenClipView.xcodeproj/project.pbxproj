@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		735D4DD615228AA400453B20 /* LNClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 735D4DD515228AA400453B20 /* LNClipView.m */; };
 		73662FE914535AAF0034010E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73662FE814535AAF0034010E /* Cocoa.framework */; };
 		7366300614535AF00034010E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7366300514535AF00034010E /* WebKit.framework */; };
 		738C67BA14A05D5900330269 /* LNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 738C67B614A05D5900330269 /* LNAppDelegate.m */; };
-		738C67BB14A05D5900330269 /* LNClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 738C67B814A05D5900330269 /* LNClipView.m */; };
 		738C67BC14A05D5900330269 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 738C67B914A05D5900330269 /* main.m */; };
 		738C67C214A05D9500330269 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 738C67C014A05D9500330269 /* MainMenu.xib */; };
 		73DF5C8514C1355B0055C178 /* pattern3.png in Resources */ = {isa = PBXBuildFile; fileRef = 73DF5C8314C1355B0055C178 /* pattern3.png */; };
@@ -18,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		735D4DD415228AA400453B20 /* LNClipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LNClipView.h; path = ../LNClipView.h; sourceTree = SOURCE_ROOT; };
+		735D4DD515228AA400453B20 /* LNClipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LNClipView.m; path = ../LNClipView.m; sourceTree = SOURCE_ROOT; };
 		73662FE414535AAF0034010E /* LinenClipView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LinenClipView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73662FE814535AAF0034010E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		73662FEB14535AAF0034010E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -25,8 +27,6 @@
 		7366300514535AF00034010E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		738C67B514A05D5900330269 /* LNAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNAppDelegate.h; sourceTree = SOURCE_ROOT; };
 		738C67B614A05D5900330269 /* LNAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNAppDelegate.m; sourceTree = SOURCE_ROOT; };
-		738C67B714A05D5900330269 /* LNClipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNClipView.h; sourceTree = SOURCE_ROOT; };
-		738C67B814A05D5900330269 /* LNClipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNClipView.m; sourceTree = SOURCE_ROOT; };
 		738C67B914A05D5900330269 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
 		738C67C114A05D9500330269 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = SOURCE_ROOT; };
 		73DF5C8314C1355B0055C178 /* pattern3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pattern3.png; sourceTree = SOURCE_ROOT; };
@@ -78,8 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				738C67B914A05D5900330269 /* main.m */,
-				738C67B714A05D5900330269 /* LNClipView.h */,
-				738C67B814A05D5900330269 /* LNClipView.m */,
+				735D4DD415228AA400453B20 /* LNClipView.h */,
+				735D4DD515228AA400453B20 /* LNClipView.m */,
 				738C67B514A05D5900330269 /* LNAppDelegate.h */,
 				738C67B614A05D5900330269 /* LNAppDelegate.m */,
 				738C67BD14A05D7000330269 /* Resources */,
@@ -163,8 +163,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				738C67BA14A05D5900330269 /* LNAppDelegate.m in Sources */,
-				738C67BB14A05D5900330269 /* LNClipView.m in Sources */,
 				738C67BC14A05D5900330269 /* main.m in Sources */,
+				735D4DD615228AA400453B20 /* LNClipView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
