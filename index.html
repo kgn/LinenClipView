@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>LinenClipView by kgn</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>LinenClipView</h1>
+<p>Adds a linen pattern behind scrollviews like in Apple's Lion apps.</p>
+        <p class="view"><a href="https://github.com/kgn/LinenClipView">View the Project on GitHub <small>kgn/LinenClipView</small></a></p>
+        <ul>
+          <li><a href="https://github.com/kgn/LinenClipView/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/kgn/LinenClipView/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/kgn/LinenClipView">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p><strong>LinenClipView</strong> provides a subclass of <code>NSScrollView</code> and <code>NSWebView</code> 
+that displays a linen pattern in the clip view like many of Apple's Lion apps. This library can of course be used to display any background image.</p>
+
+<hr><p>In <strong>Interface Builder</strong> change the <em>Class</em> of an <code>NSScrollView</code> to <code>LNScrollView</code> or similarly change the <em>Class</em> of a <code>WebView</code> to <code>LNWebView</code>.</p>
+
+<p>These classes can also be created via code with <code>initWithFrame</code>.</p>
+
+<p>To set the pattern image simply call <code>setPattern</code> on either subclass:</p>
+
+<div class="highlight">
+<pre><span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">tableScrollView</span> <span class="nl">setPattern:</span><span class="p">[</span><span class="n">NSImage</span> <span class="nl">imageNamed:</span><span class="s">@"pattern11"</span><span class="p">]];</span>
+<span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">webView</span> <span class="nl">setPattern:</span><span class="p">[</span><span class="n">NSImage</span> <span class="nl">imageNamed:</span><span class="s">@"pattern3"</span><span class="p">]];</span>
+</pre>
+</div>
+
+
+<p>The sample project that ships with this project demonstrates this.</p>
+
+<p><img src="https://github.com/kgn/LinenClipView/raw/master/Screenshot.png" alt=""></p>
+
+<hr><p>Special thanks to <a href="https://twitter.com/#!/dimillian">@Dimillian</a> for figuring out how to keep the 
+pattern stationary(<code>[NSGraphicsContext setPatternPhase:]</code>) and <a href="https://twitter.com/#!/caffeinatedapp">@caffeinatedapp</a> for figuring out a fix to the scrollbars on Lion(the complicated <code>hitTest</code> code).</p>
+
+<p>The background patterns included with this project are from <a href="http://www.minimal-patterns.com">@minimalpatterns</a>.</p>
+
+<p><strong>LinenClipView</strong> is available under the MIT license. See the LICENSE file for more info.</p>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/kgn">kgn</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+  </body>
+</html>
