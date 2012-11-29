@@ -1,4 +1,4 @@
-**LinenClipView** provides a subclass of `NSScrollView` and `NSWebView` 
+**LinenClipView** provides a subclass of `NSScrollView` and `WebView` 
 that displays a linen pattern in the clip view like many of Apple's Lion apps. This library can of course be used to display any background image.
 
 ---
