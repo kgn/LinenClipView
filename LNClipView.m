@@ -43,7 +43,7 @@
         gradientRect.origin.y += -NSMinY(self.bounds)-NSHeight(gradientRect);
         [gradient drawInRect:gradientRect angle:-90.0f];
     }else if(NSMinY(self.bounds) > 1.0f){
-        NSRect docRect = [[(NSScrollView *)[self superview] documentView] frame];
+        NSRect docRect = [[[self enclosingScrollView] documentView] frame];
         CGFloat yOffset = NSHeight(self.bounds)-(NSHeight(docRect)-NSMinY(self.bounds));
         gradientRect.origin.y += NSHeight(self.bounds)-yOffset;
         [gradient drawInRect:gradientRect angle:90.0f];
@@ -199,7 +199,7 @@
     }
     
     NSEvent *currentEvent = [NSApp currentEvent];
-    NSScrollView *scrollView = (NSScrollView *)[self superview];
+    NSScrollView *scrollView = [self enclosingScrollView];
     if([currentEvent type] == NSLeftMouseDown){
         // if we have a vertical scroller and it accepts the current hit
         if([scrollView hasVerticalScroller] && [[scrollView verticalScroller] hitTest:aPoint] != nil){
@@ -223,7 +223,7 @@
 - (void)setup{
     if(LN_RUNNING_LION){    
         id docView = [[[self mainFrame] frameView] documentView];
-        NSScrollView *scrollView = (NSScrollView *)[[docView superview] superview];
+        NSScrollView *scrollView = [docView enclosingScrollView];
         _clipView = [[LNWebClipView alloc] initWithFrame:[[scrollView contentView] frame]];
         [scrollView setContentView:_clipView];
         [scrollView setDocumentView:docView];
